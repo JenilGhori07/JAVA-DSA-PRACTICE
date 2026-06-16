@@ -27,7 +27,7 @@ public class PermutationsOfString {
 
     public static void main(String[] args) {
 
-        String str = "abc";
+        String str = "ABC";
 
         // Generate all permutations of the string
         PrintPerm(str, "");
