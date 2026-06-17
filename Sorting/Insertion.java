@@ -1,42 +1,42 @@
+// Insertion Sort:
+// Build a sorted array one element at a time by inserting
+// each element into its correct position.
+
 public class Insertion {
 
-     public static void PrintArray(int [] arr){
+    public static void PrintArray(int[] arr) {
 
-        for(int i=0; i< arr.length; i++){
+        for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
+
         System.out.println();
     }
+
     public static void main(String[] args) {
-        
-        
-        int arr [] = {7,8,3,1,2};
 
-        // Time complexity is O(n^2)
+        int arr[] = {7, 8, 3, 1, 2};
 
-        for(int i = 1; i <arr.length; i++){
-            int current =arr[i];
-            int j = i-1;
+        // Time Complexity: O(n²)
 
-            while (j >= 0 && current < arr[j]) { // current = unsorted part's firts element and // Checks:
+        for (int i = 1; i < arr.length; i++) {
 
-                                                                                                // Is there still element on left side?
-                                                                                                // Is current smaller than sorted element?
+            // First element of unsorted part
+            int current = arr[i];
 
-                                                                                                // If yes:
+            int j = i - 1;
 
-                                                                                                // shift larger elements right side. // right ma shift kare atle agal jagya thy atle tane agal muki de
-                arr[j+1] = arr[j]; // used for temprory storage where j = index number 
+            // Shift larger elements to the right
+            while (j >= 0 && current < arr[j]) {
+
+                arr[j + 1] = arr[j];
                 j--;
-                
             }
 
-            // placement
-
-            arr[j+1] = current;
-
-            
+            // Place current element at correct position
+            arr[j + 1] = current;
         }
+
         PrintArray(arr);
     }
 }
